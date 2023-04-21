@@ -35,9 +35,11 @@ console.log(getFullName(new Person("Elle", "Woods"))); // Elle Woods
 /****************************************************************/
 
 // Convert addFive into a one-liner fat-arrow function with implicit return
-function addFive(num) {
-  return num + 5;
-}
+// function addFive(num) {
+//   return num + 5;
+// }
+
+let addFive = num => num + 5;
 
 console.log('addFive output:');
 console.log(addFive(3)); // 8
@@ -46,11 +48,14 @@ console.log(addFive(3)); // 8
 /****************************************************************/
 
 // Convert coupon and the function it returns into fat-arrow functions
-function coupon(discount) {
-  return function(prices) {
-    return prices.map((price) => (price -= price * discount));
-  };
-}
+// function coupon(discount) {
+//   return function(prices) {
+//     return prices.map((price) => (price -= price * discount));
+//   };
+// }
+
+const coupon = discount => prices => prices.map(price => price -= price * discount);
+
 
 console.log('coupon output:');
 console.log(coupon(0.5)([10, 6, 3, 9])); // [ 5, 3, 1.5, 4.5 ]
